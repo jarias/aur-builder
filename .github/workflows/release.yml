@@ -1,0 +1,53 @@
+on:
+  push:
+    branches: [main]
+    paths:
+      - build-packages.sh
+      - packages
+  schedule:
+    - cron: "0 */8 * * *"
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+permissions:
+  contents: write
+  packages: read
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    environment: Release
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build packages
+        run: ./build-packages.sh ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
+      - name: Release mainline
+        uses: ncipollo/release-action@v1
+        with:
+          name: repo
+          tag: repo
+          commit: ${{ github.sha }}
+          artifacts: ./repo/*
+          allowUpdates: true
+          artifactErrorsFailBuild: true
+          omitBody: true
+          omitBodyDuringUpdate: true
+          removeArtifacts: true
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: repo
+          force_push_tag: true
