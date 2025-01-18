@@ -10,7 +10,6 @@ slack-desktop
 zoom
 coppwr-bin
 rpi-imager
-brscan5
 git-trim-bin
 xdg-utils-handlr
 appimagelauncher
@@ -22,3 +21,5 @@ python-vdf
 python-steam
 protonup-qt
 k6
+brscan5
+brother-dcpt720dw
