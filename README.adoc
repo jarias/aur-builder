@@ -1,0 +1,7 @@
+= Personal AUR repo builder
+
+This repo builds packages that I personally used from Arch AUR and publishes the repo using Github releases. The inspiration for this work came from https://github.com/archzfs/archzfs/[]
+
+== License
+
+This repo is available under the MIT License. See https://github.com/jarias/aur-builder/blob/main/LICENSE[LICENSE] for the full license text.
