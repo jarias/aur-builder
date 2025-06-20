@@ -11,6 +11,7 @@ sudo chown -R alpm: /repo
 sudo pacman -Syu --noconfirm
 git clone https://aur.archlinux.org/${pkg}.git
 cd ${pkg}
+sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
 makepkg -s --noconfirm
 sudo mv *.pkg.tar.zst /repo
 echo "----------------------> Updating repo $pkg"
