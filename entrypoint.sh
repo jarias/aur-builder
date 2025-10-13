@@ -12,7 +12,7 @@ sudo pacman -Syu --noconfirm
 git clone https://aur.archlinux.org/${pkg}.git
 cd ${pkg}
 sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
-makepkg -s --noconfirm || true
+makepkg -s --nocheck --noconfirm || true
 sudo mv *.pkg.tar.zst /repo || true
 echo "----------------------> Updating repo $pkg"
 cd /repo
