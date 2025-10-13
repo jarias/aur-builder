@@ -14,8 +14,8 @@ xdg-utils-handlr
 argagg
 appimagelauncher
 coolercontrol-liqctld
-coolercontrold
-coolercontrol
+coolercontrold-bin
+coolercontrol-bin
 python-inputs
 python-vdf
 python-steam
