@@ -21,6 +21,6 @@ if [[ ! -f /repo/${fullpkgname}-x86_64.pkg.tar.zst || ! -f /repo/${fullpkgname}-
   echo "----------------------> Done building package $fullpkgname"
 
   echo "----------------------> Updating repo $fullpkgname"
-  find . -type f -iname '*.pkg.tar.zst' -print0 | xargs -0 sudo repo-add -n /repo/jarias.db.tar.zst
+  find . -type f -iname '*.pkg.tar.zst' -print0 | xargs -0 sudo repo-add -n /repo/jarias.db
   echo "----------------------> Done updating repo $fullpkgname"
 fi

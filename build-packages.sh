@@ -9,8 +9,6 @@ echo "----------------------> Creating empty repo... <----------------------"
 mkdir repo
 cd repo
 gh release download repo
-rm jarias.db
-rm jarias.files
 cd ..
 echo "----------------------> Done creating empty repo <--------------------"
 
