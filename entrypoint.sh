@@ -13,9 +13,7 @@ cd ${pkg}
 source PKGBUILD
 fullpkgname=${pkgname}-${pkgver}-${pkgrel}
 
-ls /repo
-
-if [ ! -f /repo/${fullpkgname}-x86_64.pkg.tar.zst ]; then
+if [[ ! -f /repo/${fullpkgname}-x86_64.pkg.tar.zst || ! -f /repo/${fullpkgname}-any.pkg.tar.zst ]]; then
   echo "----------------------> Building package $fullpkgname"
   sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
   makepkg -s --nocheck --noconfirm
