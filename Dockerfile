@@ -3,7 +3,7 @@ FROM archlinux:base-devel
 ENV EDITOR=vim
 
 RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm sudo git wayland
+RUN pacman -S --noconfirm sudo git wayland github-cli
 RUN useradd -m builder -G wheel
 
 COPY builder-sudoers-file /etc/sudoers.d/builder

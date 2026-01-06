@@ -36,6 +36,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build packages
         run: ./build-packages.sh ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: Release mainline
         uses: ncipollo/release-action@v1
         with:
