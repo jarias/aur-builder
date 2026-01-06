@@ -8,7 +8,10 @@ echo "----------------------> Using docker image ${docker_image} <----------"
 echo "----------------------> Creating empty repo... <----------------------"
 mkdir repo
 cd repo
-gh release download repo
+tar --zstd -cf jarias.db.tar.zst --files-from /dev/null
+tar --zstd -cf jarias.files.tar.zst --files-from /dev/null
+ln -s jarias.db.tar.zst jarias.db
+ln -s jarias.files.tar.zst jarias.files
 cd ..
 echo "----------------------> Done creating empty repo <--------------------"
 

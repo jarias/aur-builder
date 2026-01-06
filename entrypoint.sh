@@ -10,17 +10,13 @@ sudo chown -R alpm: /repo
 sudo pacman -Syu --noconfirm
 git clone https://aur.archlinux.org/${pkg}.git
 cd ${pkg}
-source PKGBUILD
-fullpkgname=${pkgname}-${pkgver}-${pkgrel}
 
-if [[ ! -f /repo/${fullpkgname}-x86_64.pkg.tar.zst || ! -f /repo/${fullpkgname}-any.pkg.tar.zst ]]; then
-  echo "----------------------> Building package $fullpkgname"
-  sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
-  makepkg -s --nocheck --noconfirm
-  sudo mv *.pkg.tar.zst /repo
-  echo "----------------------> Done building package $fullpkgname"
+echo "----------------------> Building package $pkg"
+sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
+makepkg -s --nocheck --noconfirm
+sudo mv *.pkg.tar.zst /repo
+echo "----------------------> Done building package $pkg"
 
-  echo "----------------------> Updating repo $fullpkgname"
-  find . -type f -iname '*.pkg.tar.zst' -print0 | xargs -0 sudo repo-add -n /repo/jarias.db
-  echo "----------------------> Done updating repo $fullpkgname"
-fi
+echo "----------------------> Updating repo $pkg"
+find . -type f -iname '*.pkg.tar.zst' -print0 | xargs -0 sudo repo-add -n /repo/jarias.db.tar.zst
+echo "----------------------> Done updating repo $pkg"
