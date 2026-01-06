@@ -8,6 +8,7 @@ RUN useradd -m builder -G wheel
 
 COPY builder-sudoers-file /etc/sudoers.d/builder
 COPY pacman.conf /etc/pacman.conf
+COPY makepkg.conf /etc/makepkg.conf
 COPY entrypoint.sh /usr/local/bin/
 
 USER builder
