@@ -10,7 +10,9 @@ echo "----------------------> Building package $pkg"
 sudo chown -R alpm: /repo
 sudo pacman -Syu --noconfirm
 cd /pkgs/${pkg}
-sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
+sed -E 's/^epoch=1$//gm;t' PKGBUILD >/tmp/PKGBUILD-$pkg
+cp /tmp/PKGBUILD-$pkg PKGBUILD
+rm /tmp/PKGBUILD-$pkg
 makepkg -s --nocheck --noconfirm
 echo "----------------------> Done building package $pkg"
 
