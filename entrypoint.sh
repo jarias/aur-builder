@@ -8,11 +8,12 @@ sudo chown -R builder: /home/builder/src
 
 echo "----------------------> Building package $pkg"
 sudo chown -R alpm: /repo
+sudo chown -R builder: /pkgs
 sudo pacman -Syu --noconfirm
+
+ls -la /
 cd /pkgs/${pkg}
-sed -E 's/^epoch=1$//gm;t' PKGBUILD >/tmp/PKGBUILD-$pkg
-cp /tmp/PKGBUILD-$pkg PKGBUILD
-rm /tmp/PKGBUILD-$pkg
+sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
 makepkg -s --nocheck --noconfirm
 echo "----------------------> Done building package $pkg"
 
