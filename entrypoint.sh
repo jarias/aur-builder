@@ -11,7 +11,6 @@ sudo chown -R alpm: /repo
 sudo chown -R builder: /pkgs
 sudo pacman -Syu --noconfirm
 
-ls -la /
 cd /pkgs/${pkg}
 sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
 makepkg -s --nocheck --noconfirm
