@@ -20,6 +20,7 @@ while IFS= read -r pkg; do
   docker run --privileged \
     --rm \
     -v "$(pwd)/repo:/repo" \
+    -v "$(pwd)/pkgs:/pkgs" \
     $docker_image $pkg
 done <packages
 echo "----------------------> Done bulding packages <-----------------------"

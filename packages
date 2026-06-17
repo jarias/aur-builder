@@ -1,10 +1,7 @@
 obs-vkcapture
 makemkv
 it87-dkms-git
-tofi
-neovim-symlinks
 jetbrains-toolbox
-google-chrome
 slack-desktop
 zoom
 coppwr-bin
@@ -22,7 +19,6 @@ protonup-qt
 k6
 brscan5
 brother-dcpt720dw
-brave-bin
 elephant
 elephant-bluetooth
 elephant-calc
@@ -38,5 +34,3 @@ elephant-unicode
 elephant-websearch
 walker
 pinta
-localsend-bin
-cemu

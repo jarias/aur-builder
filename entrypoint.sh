@@ -9,8 +9,7 @@ sudo chown -R builder: /home/builder/src
 echo "----------------------> Building package $pkg"
 sudo chown -R alpm: /repo
 sudo pacman -Syu --noconfirm
-git clone https://aur.archlinux.org/${pkg}.git
-cd ${pkg}
+cd /pkgs/${pkg}
 sed -i -E 's/^epoch=1$//gm;t' PKGBUILD
 makepkg -s --nocheck --noconfirm
 echo "----------------------> Done building package $pkg"

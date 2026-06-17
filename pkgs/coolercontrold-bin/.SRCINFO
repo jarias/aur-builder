@@ -1,0 +1,23 @@
+pkgbase = coolercontrold-bin
+	pkgdesc = A program to monitor and control your cooling devices: daemon (binary release)
+	pkgver = 4.3.1
+	pkgrel = 1
+	url = https://gitlab.com/coolercontrol/coolercontrol
+	arch = x86_64
+	groups = coolercontrol-bin
+	license = GPL-3.0-or-later
+	depends = libdrm
+	depends = gcc-libs
+	depends = glibc
+	optdepends = nvidia-utils: NVIDIA GPU support
+	optdepends = liquidctl: liquidctl driver support
+	optdepends = lm_sensors: kernel hwmon driver support
+	provides = coolercontrold
+	conflicts = coolercontrold
+	conflicts = coolercontrol-liqctld
+	source = https://gitlab.com/coolercontrol/coolercontrol/-/releases/4.3.1/downloads/packages/coolercontrold_4.3.1
+	source = https://gitlab.com/coolercontrol/coolercontrol/-/releases/4.3.1/downloads/packages/coolercontrol-4.3.1.tar.gz
+	sha256sums = 982732cb744f2c93bde17b59d550771d98c26385d2238bd35b1494ef6682b484
+	sha256sums = 00ab5fd9a7a24bd003c2d1d34f78bf50487f46499c68a07d7f8d32e199643082
+
+pkgname = coolercontrold-bin
