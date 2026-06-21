@@ -1,6 +1,0 @@
-*.rpm
-*.tar
-*.zst
-pkg/
-src/
-test.pdf
