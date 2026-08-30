@@ -1,0 +1,20 @@
+pkgbase = libayatana-appindicator-glib
+	pkgdesc = Ayatana Application Indicators Shared Library (GLib-2.0 reimplementation, 100% GTK-free, 100% dbusmenu-free)
+	pkgver = 2.0.3
+	pkgrel = 1
+	url = https://github.com/AyatanaIndicators/libayatana-appindicator-glib
+	arch = i686
+	arch = x86_64
+	arch = pentium4
+	license = GPL-3.0-or-later
+	makedepends = cmake-extras
+	makedepends = gi-docgen
+	makedepends = gobject-introspection
+	makedepends = vala
+	makedepends = glib2-devel
+	depends = glibc
+	depends = glib2
+	source = libayatana-appindicator-glib-2.0.3.tar.gz::https://github.com/AyatanaIndicators/libayatana-appindicator-glib/archive/2.0.3.tar.gz
+	sha256sums = 20292209616b34674e391fdbd6dfd23dfcee3ba9e04f67f30faac29bf4c2d3a4
+
+pkgname = libayatana-appindicator-glib
