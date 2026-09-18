@@ -5,6 +5,7 @@ on:
     paths:
       - build-packages.sh
       - packages
+      - pkgs/**
 
 concurrency:
   group: release
