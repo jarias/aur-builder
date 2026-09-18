@@ -18,7 +18,6 @@ env:
 permissions:
   contents: write
   packages: read
-  workflows: write
 
 jobs:
   release:
